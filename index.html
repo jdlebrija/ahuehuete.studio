@@ -50,14 +50,15 @@
       background: var(--lima);
       pointer-events: none;
       z-index: 10000;
-      opacity: 0;                    /* hidden until mouse moves */
-      transform: translate(-100px, -100px);   /* start off-screen */
+      opacity: 0;
+      /* translate(-50%,-50%) always centers the dot on the cursor
+         regardless of its current size — no manual offset needed */
+      transform: translate(-50%, -50%);
       transition:
         width  0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
         height 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
         opacity 0.3s ease;
       mix-blend-mode: multiply;
-      /* No display:none — always in DOM, just invisible */
     }
     #cur-dot.expanded {
       width: 56px;
@@ -104,7 +105,7 @@
        HERO — full-screen image, parallax
        ─────────────────────────────────────────
        Imagen: el div.hero-bg ya tiene
-         style="background-image: url('img/hero.jpg');"
+         style="background-image: url('hero.jpg');"
     ══════════════════════════════════════════ */
     #hero-section {
       height: 100vh; position: relative; overflow: hidden;
@@ -440,7 +441,7 @@
 
 <!-- HERO — full-screen image only, no logo overlay -->
 <section id="hero-section">
-  <div class="hero-bg" id="heroBg" style="background-image: url('img/hero.jpg');"></div>
+  <div class="hero-bg" id="heroBg" style="background-image: url('hero.jpg');"></div>
   <div class="hero-overlay"></div>
 </section>
 
@@ -509,63 +510,63 @@
 
   <div class="works-scroll-track" id="worksTrack">
     <div class="work-item">
-      <img class="ph" src="img/alcazar.jpg" alt="Alcazar de Toledo">
+      <img class="ph" src="alcazar.jpg" alt="Alcazar de Toledo">
       <div class="work-label">
         <div class="work-cat" data-es="Paisajismo" data-en="Landscape">Paisajismo</div>
         <div class="work-name">Alcazar de Toledo</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/frondal.jpg" alt="Casa Frondal">
+      <img class="ph" src="frondal.jpg" alt="Casa Frondal">
       <div class="work-label">
         <div class="work-cat" data-es="Jardín Residencial" data-en="Residential Garden">Jardín Residencial</div>
         <div class="work-name">Casa Frondal</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/orza.jpg" alt="Orza">
+      <img class="ph" src="orza.jpg" alt="Orza">
       <div class="work-label">
         <div class="work-cat" data-es="Paisajismo" data-en="Landscape">Paisajismo</div>
         <div class="work-name">Orza</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/arteaga.jpg" alt="Arteaga y Salazar">
+      <img class="ph" src="arteaga.jpg" alt="Arteaga y Salazar">
       <div class="work-label">
         <div class="work-cat" data-es="Jardín Residencial" data-en="Residential Garden">Jardín Residencial</div>
         <div class="work-name">Arteaga y Salazar</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/yautepec.jpg" alt="Yautepec">
+      <img class="ph" src="yautepec.jpg" alt="Yautepec">
       <div class="work-label">
         <div class="work-cat" data-es="Paisajismo" data-en="Landscape">Paisajismo</div>
         <div class="work-name">Yautepec</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/protasio.jpg" alt="Protasio Tagle">
+      <img class="ph" src="protasio.jpg" alt="Protasio Tagle">
       <div class="work-label">
         <div class="work-cat" data-es="Jardín Residencial" data-en="Residential Garden">Jardín Residencial</div>
         <div class="work-name">Protasio Tagle</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/ahumada.jpg" alt="Ahumada Villalón">
+      <img class="ph" src="ahumada.jpg" alt="Ahumada Villalón">
       <div class="work-label">
         <div class="work-cat" data-es="Paisajismo" data-en="Landscape">Paisajismo</div>
         <div class="work-name">Ahumada Villalón</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/corregidores.jpg" alt="Corregidores">
+      <img class="ph" src="corregidores.jpg" alt="Corregidores">
       <div class="work-label">
         <div class="work-cat" data-es="Jardín Residencial" data-en="Residential Garden">Jardín Residencial</div>
         <div class="work-name">Corregidores</div>
       </div>
     </div>
     <div class="work-item">
-      <img class="ph" src="img/pedregal.jpg" alt="Pedregal">
+      <img class="ph" src="pedregal.jpg" alt="Pedregal">
       <div class="work-label">
         <div class="work-cat" data-es="Paisajismo" data-en="Landscape">Paisajismo</div>
         <div class="work-name">Pedregal</div>
@@ -654,23 +655,17 @@
     <div class="section-tag" data-es="Nuestra Práctica" data-en="Our Practice">Nuestra Práctica</div>
   </div>
   <div class="disclaimer-content reveal d1">
-    <p data-es="En AHUEHUETE.STUDIO cada proyecto es una obra irrepetible. Por ello, <strong>nos reservamos el derecho de seleccionar los proyectos con los que colaboramos.</strong> Aceptamos encargos de manera exclusiva y bajo demanda, eligiendo aquellos en los que nuestra visión y la del cliente confluyen genuinamente."
-       data-en="At AHUEHUETE.STUDIO every project is a singular work. For this reason, <strong>we reserve the right to select the projects we take on.</strong> We accept commissions exclusively and on a selective basis, choosing those where our vision and the client's genuinely converge.">
-      En AHUEHUETE.STUDIO cada proyecto es una obra irrepetible. Por ello,
-      <strong>nos reservamos el derecho de seleccionar los proyectos con los que colaboramos.</strong>
-      Aceptamos encargos de manera exclusiva y bajo demanda, eligiendo aquellos en los que
-      nuestra visión y la del cliente confluyen genuinamente.
+    <p data-es="En AHUEHUETE.STUDIO, cada proyecto es una obra irrepetible. Por ello, trabajamos de manera selectiva, colaborando únicamente en proyectos donde la visión del cliente y la nuestra convergen con claridad y sentido."
+       data-en="At AHUEHUETE.STUDIO, every project is a singular work. For this reason, we work selectively, collaborating only on projects where the client's vision and ours converge with clarity and purpose.">
+      En AHUEHUETE.STUDIO, cada proyecto es una obra irrepetible. Por ello, trabajamos de manera selectiva, colaborando únicamente en proyectos donde la visión del cliente y la nuestra convergen con claridad y sentido.
     </p>
-    <p data-es="Trabajamos en la Ciudad de México, en todo el territorio nacional y en el extranjero — llevando el paisajismo artístico ahí donde el proyecto lo merece."
-       data-en="We work in Mexico City, across Mexico, and internationally — bringing artistic landscape design wherever the project calls for it.">
-      Trabajamos en la Ciudad de México, en todo el territorio nacional
-      y en el extranjero — llevando el paisajismo artístico ahí donde el proyecto lo merece.
+    <p data-es="Trabajamos en la Ciudad de México, a nivel nacional e internacional, llevando el paisajismo como práctica artística allí donde el proyecto lo requiere."
+       data-en="We work in Mexico City, nationally and internationally, bringing landscape design as an artistic practice wherever the project demands it.">
+      Trabajamos en la Ciudad de México, a nivel nacional e internacional, llevando el paisajismo como práctica artística allí donde el proyecto lo requiere.
     </p>
-    <p data-es="Nuestros proyectos abarcan jardines residenciales, parques, desarrollos residenciales, azoteas y terrazas — cualquier espacio que aspire a convertirse en algo más que un entorno."
-       data-en="Our projects span residential gardens, parks, residential developments, rooftops, and terraces — any space that aspires to become more than just a setting.">
-      Nuestros proyectos abarcan jardines residenciales, parques,
-      desarrollos residenciales, azoteas y terrazas — cualquier espacio
-      que aspire a convertirse en algo más que un entorno.
+    <p data-es="Desarrollamos jardines residenciales, parques, conjuntos habitacionales, azoteas y terrazas: espacios concebidos no como fondo, sino como esencia del paisaje."
+       data-en="We develop residential gardens, parks, housing developments, rooftops, and terraces: spaces conceived not as background, but as the essence of the landscape.">
+      Desarrollamos jardines residenciales, parques, conjuntos habitacionales, azoteas y terrazas: espacios concebidos no como fondo, sino como esencia del paisaje.
     </p>
   </div>
 </section>
@@ -725,26 +720,17 @@
 
 <script>
 /* ══════════════════════════════════════════
-   CURSOR — single green dot, expands on hover
-   Uses direct style.left/top (no transform offset issues).
-   opacity starts 0, goes to 1 on first mousemove.
+   CURSOR — green dot centered on pointer
+   CSS handles centering via translate(-50%,-50%)
+   so we just set left/top = exact mouse coords.
 ══════════════════════════════════════════ */
 (function() {
-  const dot = document.getElementById('cur-dot');
+  var dot = document.getElementById('cur-dot');
   if (!dot) return;
 
-  let dotX = -100, dotY = -100;
-
-  /* Move the dot to exact mouse position, offset by half its size */
-  function moveDot(x, y) {
-    dotX = x; dotY = y;
-    const half = dot.classList.contains('expanded') ? 28 : 6;
-    dot.style.left = (x - half) + 'px';
-    dot.style.top  = (y - half) + 'px';
-  }
-
   document.addEventListener('mousemove', function(e) {
-    moveDot(e.clientX, e.clientY);
+    dot.style.left = e.clientX + 'px';
+    dot.style.top  = e.clientY + 'px';
     dot.style.opacity = '1';
   }, { passive: true });
 
@@ -752,17 +738,10 @@
     dot.style.opacity = '0';
   });
 
-  /* Expand on interactive elements */
-  const targets = 'a, button, .pillar, .service-card, .section-tag, .work-item, .lang-opt';
+  var targets = 'a, button, .pillar, .service-card, .section-tag, .work-item, .lang-opt';
   document.querySelectorAll(targets).forEach(function(el) {
-    el.addEventListener('mouseenter', function() {
-      dot.classList.add('expanded');
-      moveDot(dotX, dotY);
-    });
-    el.addEventListener('mouseleave', function() {
-      dot.classList.remove('expanded');
-      moveDot(dotX, dotY);
-    });
+    el.addEventListener('mouseenter', function() { dot.classList.add('expanded'); });
+    el.addEventListener('mouseleave', function() { dot.classList.remove('expanded'); });
   });
 })();
 
